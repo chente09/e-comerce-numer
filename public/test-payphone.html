@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Cajita PayPhone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="origin-when-cross-origin">
+
+  <!-- ✅ Carga CSS de PayPhone -->
+  <link rel="stylesheet" href="https://cdn.payphonetodoesposible.com/box/v1.1/payphone-payment-box.css">
+
+  <!-- ✅ Carga script de PayPhone -->
+  <script type="module" src="https://cdn.payphonetodoesposible.com/box/v1.1/payphone-payment-box.js"></script> 
+</head>
+
+<body>
+
+  <h2 style="text-align: center;">Prueba Cajita de Pago PayPhone</h2>
+
+
+
+  <!-- ✅ SCRIPT para inicializar el botón -->
+  <script >
+    window.addEventListener('DOMContentLoaded', () => {
+      // 👇 Asegúrate de poner aquí tu token real completo
+      new PPaymentButtonBox({
+        token: 'za5oHaelhnn1_A1nRaDFx3dQkDVFrxQRpXI3gToaE37jk6t8SWH48kyxEYugfg2RF3FiMU9WISHDSzSgOocQFWBCWiPBEWIHWIY3lHI63DhYk4QEIT8Jbv27mI91YOtwCGYeF--xp2-QMsO3uxC3kDbovh9k-28GaeNA7iHnm3-Tll0LmCafLZ3fTYfcuG3l6medVtcWfG41SfTkzNhv0WvbpbAM5y-zYOAdID1CnEE1srSfY--SSP7wCDxXpVkrkEVmTHo-2Z_KL_2ALpl8-i7x485RbAQtlGGRwUsIZT_Z6igtfBiHNzv3JGX33hWXOFML_g', 
+        storeId: 'cd3d7025-400d-4e42-a279-b389277fcf0e',
+        clientTransactionId: 'pedido-' + Date.now(),
+        amount: 515,           // 5.00 USD (en centavos)
+        amountWithTax: 500,    
+        tax: 15,
+        reference: 'Prueba Standalone PayPhone',
+      }).render('pp-button');
+    });
+  </script>
+    <div id="pp-button"></div>
+
+</body>
+</html>
